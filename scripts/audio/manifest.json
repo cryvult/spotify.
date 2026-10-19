@@ -1,0 +1,82 @@
+{
+  "parujacy-kubek": {
+    "file": "audio/parujacy-kubek.mp3",
+    "durationSec": 90.2
+  },
+  "deszcz-na-parapecie": {
+    "file": "audio/deszcz-na-parapecie.mp3",
+    "durationSec": 97.3
+  },
+  "notatki-na-marginesie": {
+    "file": "audio/notatki-na-marginesie.mp3",
+    "durationSec": 84
+  },
+  "lampka-na-biurku": {
+    "file": "audio/lampka-na-biurku.mp3",
+    "durationSec": 88
+  },
+  "neon-nad-wisla": {
+    "file": "audio/neon-nad-wisla.mp3",
+    "durationSec": 87.1
+  },
+  "autostrada-1986": {
+    "file": "audio/autostrada-1986.mp3",
+    "durationSec": 82.5
+  },
+  "kaseta-vhs": {
+    "file": "audio/kaseta-vhs.mp3",
+    "durationSec": 94
+  },
+  "chromowany-zachod": {
+    "file": "audio/chromowany-zachod.mp3",
+    "durationSec": 90.4
+  },
+  "poranna-mgla": {
+    "file": "audio/poranna-mgla.mp3",
+    "durationSec": 91.7
+  },
+  "szklo": {
+    "file": "audio/szklo.mp3",
+    "durationSec": 87
+  },
+  "cisza-po-burzy": {
+    "file": "audio/cisza-po-burzy.mp3",
+    "durationSec": 97
+  },
+  "swiatlo-przez-liscie": {
+    "file": "audio/swiatlo-przez-liscie.mp3",
+    "durationSec": 89.3
+  },
+  "cieple-noce": {
+    "file": "audio/cieple-noce.mp3",
+    "durationSec": 66
+  },
+  "dachy-miasta": {
+    "file": "audio/dachy-miasta.mp3",
+    "durationSec": 64.9
+  },
+  "pulsar": {
+    "file": "audio/pulsar.mp3",
+    "durationSec": 67
+  },
+  "start-gry": {
+    "file": "audio/start-gry.mp3",
+    "durationSec": 62
+  },
+  "zamek-z-pikseli": {
+    "file": "audio/zamek-z-pikseli.mp3",
+    "durationSec": 67.5
+  },
+  "ostatni-boss": {
+    "file": "audio/ostatni-boss.mp3",
+    "durationSec": 58.8
+  },
+  "linia-33": {
+    "file": "audio/linia-33.mp3",
+    "durationSec": 72
+  },
+  "przystanek-na-zadanie": {
+    "file": "audio/przystanek-na-zadanie.mp3",
+    "durationSec": 69
+  }
+}

@@ -1,0 +1,7 @@
+dist
+coverage
+node_modules
+package-lock.json
+public/covers
+public/audio
+scripts/audio/manifest.json

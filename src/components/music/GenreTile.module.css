@@ -1,0 +1,39 @@
+.tile {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  background: var(--tile);
+  color: #f7f5ff;
+  isolation: isolate;
+  transition: transform var(--duration) var(--ease-out);
+}
+
+.tile:hover {
+  transform: translateY(-2px);
+}
+
+.name {
+  position: relative;
+  z-index: 1;
+  font-size: var(--text-lg);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-tight);
+}
+
+.art {
+  position: absolute;
+  right: -8%;
+  bottom: -6%;
+  width: 46%;
+  border-radius: var(--radius-xs);
+  box-shadow: 0 8px 20px rgb(0 0 0 / 0.35);
+  transform: rotate(22deg);
+  transition: transform var(--duration-slow) var(--ease-out);
+}
+
+.tile:hover .art {
+  transform: rotate(16deg) scale(1.04);
+}

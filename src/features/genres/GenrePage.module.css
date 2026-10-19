@@ -1,0 +1,8 @@
+.cover {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  border-radius: inherit;
+  background: radial-gradient(circle at 30% 25%, rgb(255 255 255 / 0.18), transparent 55%), var(--tile);
+  color: rgb(255 255 255 / 0.9);
+}

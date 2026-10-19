@@ -1,0 +1,125 @@
+.top {
+  position: sticky;
+  top: var(--topbar-height);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin: calc(var(--space-2) * -1) calc(var(--page-gutter) * -1) 0;
+  padding: var(--space-2) var(--page-gutter) var(--space-4);
+  background: var(--color-bg);
+}
+
+.heading {
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-heavy);
+  letter-spacing: var(--tracking-display);
+}
+
+.results {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-10);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-width: 0;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.sectionTitle {
+  font-size: var(--text-xl);
+  font-weight: var(--weight-bold);
+}
+
+.more {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+}
+
+.more:hover {
+  color: var(--color-text);
+  text-decoration: underline;
+}
+
+.topGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  gap: var(--space-6);
+}
+
+.genres {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  gap: var(--space-3);
+}
+
+.recent {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.recentItem {
+  display: flex;
+  align-items: center;
+  border-radius: var(--radius-pill);
+  background: var(--color-surface-hover);
+}
+
+.recentButton {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 2.5rem;
+  padding: 0 var(--space-2) 0 var(--space-4);
+  border-radius: var(--radius-pill) 0 0 var(--radius-pill);
+  font-weight: var(--weight-medium);
+}
+
+.recentButton svg {
+  color: var(--color-text-muted);
+}
+
+.recentRemove {
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.5rem;
+  border-radius: 0 var(--radius-pill) var(--radius-pill) 0;
+  color: var(--color-text-muted);
+}
+
+.recentRemove:hover,
+.recentButton:hover {
+  color: var(--color-text);
+}
+
+.note {
+  max-width: 75ch;
+  margin-top: var(--space-1);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+@media (max-width: 899px) {
+  .topGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 639px) {
+  .genres {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

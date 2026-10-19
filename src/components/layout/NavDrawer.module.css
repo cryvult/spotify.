@@ -1,0 +1,36 @@
+.drawer {
+  width: min(20rem, 86vw);
+  max-width: none;
+  height: 100dvh;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--color-text);
+}
+
+.drawer[open] {
+  animation: slide-in var(--duration-slow) var(--ease-out);
+}
+
+.drawer::backdrop {
+  background: var(--color-scrim);
+  animation: fade-in var(--duration) ease;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+}
+
+.content {
+  height: 100%;
+  padding: calc(env(safe-area-inset-top) + var(--space-2)) 0 env(safe-area-inset-bottom) var(--space-2);
+}
+
+.content > nav {
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+}

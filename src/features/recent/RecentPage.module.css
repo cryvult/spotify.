@@ -1,0 +1,23 @@
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: calc(var(--space-4) * -1);
+}
+
+.clear {
+  margin-left: auto;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.day {
+  padding-inline: var(--space-2);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-bold);
+}

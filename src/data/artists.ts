@@ -1,0 +1,77 @@
+import { assetUrl } from '../utils/assetUrl';
+import type { Artist } from '../types/music';
+
+// Wykonawcy z flagą isFictional = true to projekty stworzone na potrzeby wersji demonstracyjnej.
+// Ich utwory zostały wygenerowane skryptem scripts/generate-audio.mjs.
+export const ARTISTS: Artist[] = [
+  {
+    id: 'pola-wiatr',
+    name: 'Pola Wiatr',
+    bio: 'Spokojne bity lo-fi z pianinem elektrycznym, szumem płyty i gitarowymi motywami. Muzyka na długie wieczory przy biurku.',
+    genreIds: ['lofi'],
+    imageUrl: assetUrl('covers/artists/pola-wiatr.svg'),
+    accentColor: '#3a3466',
+    isFictional: true,
+    website: null,
+  },
+  {
+    id: 'okto',
+    name: 'Okto',
+    bio: 'Syntezatory, automaty perkusyjne i melodie jak z czołówek filmów z lat 80.',
+    genreIds: ['synthwave'],
+    imageUrl: assetUrl('covers/artists/okto.svg'),
+    accentColor: '#5b1f73',
+    isFictional: true,
+    website: null,
+  },
+  {
+    id: 'mira-halden',
+    name: 'Mira Halden',
+    bio: 'Fortepian, długie plamy dźwięku i dużo przestrzeni. Kompozycje do wyciszenia i skupienia.',
+    genreIds: ['ambient', 'neoklasyka'],
+    imageUrl: assetUrl('covers/artists/mira-halden.svg'),
+    accentColor: '#4f5ea8',
+    isFictional: true,
+    website: null,
+  },
+  {
+    id: 'kaskada',
+    name: 'Kaskada',
+    bio: 'Głęboki house z ciepłymi akordami i miękkim basem. Rytm na letnie wieczory w mieście.',
+    genreIds: ['house'],
+    imageUrl: assetUrl('covers/artists/kaskada.svg'),
+    accentColor: '#7a2440',
+    isFictional: true,
+    website: null,
+  },
+  {
+    id: 'bit-brigada',
+    name: 'Bit Brigada',
+    bio: 'Muzyka w stylu 8-bitowych konsol: kanały prostokątne, trójkątny bas i szumowa perkusja.',
+    genreIds: ['chiptune'],
+    imageUrl: assetUrl('covers/artists/bit-brigada.svg'),
+    accentColor: '#1d3d73',
+    isFictional: true,
+    website: null,
+  },
+  {
+    id: 'nocny-tramwaj',
+    name: 'Nocny Tramwaj',
+    bio: 'Powolne bity, głęboki bas i melancholijne pianino elektryczne. Downtempo na nocne powroty.',
+    genreIds: ['downtempo'],
+    imageUrl: assetUrl('covers/artists/nocny-tramwaj.svg'),
+    accentColor: '#1f5f5a',
+    isFictional: true,
+    website: null,
+  },
+  {
+    id: 'kevin-macleod',
+    name: 'Kevin MacLeod',
+    bio: 'Amerykański kompozytor, który udostępnił ponad dwa tysiące utworów na licencji Creative Commons. Utwory w SONORA są odtwarzane bezpośrednio z Wikimedia Commons.',
+    genreIds: ['ambient', 'folk'],
+    imageUrl: assetUrl('covers/artists/kevin-macleod.svg'),
+    accentColor: '#6d4c74',
+    isFictional: false,
+    website: 'https://incompetech.com',
+  },
+];

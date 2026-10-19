@@ -1,0 +1,106 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-width: 0;
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  transition: background-color var(--duration) ease;
+}
+
+.card:hover,
+.card:focus-within {
+  background: var(--color-surface-hover);
+}
+
+.imageWrap {
+  position: relative;
+  margin-bottom: var(--space-2);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-cover);
+}
+
+.circle .imageWrap {
+  border-radius: 50%;
+}
+
+.title {
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+  letter-spacing: 0;
+}
+
+.link {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Rozciągnięty link: klik w dowolne miejsce karty otwiera widok. */
+.link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.link:focus-visible {
+  outline: none;
+}
+
+.link:focus-visible::after {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+  border-radius: var(--radius-md);
+}
+
+.subtitle {
+  display: -webkit-box;
+  overflow: hidden;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  line-height: var(--leading-snug);
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.circle .title,
+.circle .subtitle {
+  text-align: center;
+}
+
+.play {
+  position: absolute;
+  right: var(--space-2);
+  bottom: var(--space-2);
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(8px);
+  transition:
+    opacity var(--duration) ease,
+    transform var(--duration) var(--ease-out),
+    background-color var(--duration-fast) ease;
+}
+
+.card:hover .play,
+.play:focus-visible,
+.playVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.play:hover {
+  transform: translateY(0) scale(1.05);
+}
+
+/* Na ekranach dotykowych przycisk jest zawsze widoczny (nie ma najechania kursorem). */
+@media (hover: none) {
+  .play {
+    opacity: 1;
+    transform: none;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}

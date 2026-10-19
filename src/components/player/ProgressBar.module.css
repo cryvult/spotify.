@@ -1,0 +1,25 @@
+.progress {
+  display: grid;
+  grid-template-columns: 2.75rem minmax(0, 1fr) 2.75rem;
+  align-items: center;
+  gap: var(--space-2);
+  width: 100%;
+}
+
+.time {
+  color: var(--color-text-subtle);
+  font-size: var(--text-xs);
+  font-variant-numeric: tabular-nums;
+}
+
+.time:first-child {
+  text-align: right;
+}
+
+.compact {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.compact .time {
+  display: none;
+}

@@ -1,0 +1,135 @@
+.shell {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr) var(--player-height);
+  grid-template-areas:
+    'sidebar main'
+    'player player';
+  gap: var(--space-2);
+  height: 100dvh;
+  padding: var(--space-2) var(--space-2) 0;
+  background: var(--color-shell);
+}
+
+.withQueue {
+  grid-template-columns: auto minmax(0, 1fr) var(--queue-width);
+  grid-template-areas:
+    'sidebar main queue'
+    'player player player';
+}
+
+.sidebarSlot {
+  grid-area: sidebar;
+  width: var(--sidebar-width);
+  min-height: 0;
+}
+
+.rail {
+  width: var(--sidebar-collapsed);
+}
+
+.main {
+  position: relative;
+  grid-area: main;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+  outline: none;
+}
+
+/* Fokus na <main> ustawiamy programowo po zmianie widoku (dla czytników ekranu); bez obwódki. */
+.main:focus-visible {
+  outline: none;
+}
+
+.sentinel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 8px;
+  pointer-events: none;
+}
+
+.queueSlot {
+  grid-area: queue;
+  min-height: 0;
+}
+
+/* Na mniejszych ekranach kolejka wysuwa się nad treścią. */
+.queueOverlay {
+  position: fixed;
+  top: var(--space-2);
+  right: var(--space-2);
+  bottom: calc(var(--player-height) + var(--space-2));
+  z-index: var(--z-drawer);
+  width: min(var(--queue-width), calc(100vw - 1rem));
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  animation: queue-in var(--duration-slow) var(--ease-out);
+}
+
+@keyframes queue-in {
+  from {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+}
+
+.scrim {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-drawer);
+  background: var(--color-scrim);
+  animation: fade-in var(--duration) ease;
+}
+
+.playerSlot {
+  grid-area: player;
+  min-width: 0;
+}
+
+.mobileBottom {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .shell,
+  .withQueue {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr);
+    grid-template-areas: 'main';
+    gap: 0;
+    padding: 0;
+  }
+
+  .main {
+    border-radius: 0;
+    padding-bottom: calc(
+      var(--tabbar-height) + var(--mini-player-height) + env(safe-area-inset-bottom) + var(--space-6)
+    );
+  }
+
+  .mobileBottom {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: var(--z-player);
+    display: flex;
+    flex-direction: column;
+    padding-bottom: env(safe-area-inset-bottom);
+    background: linear-gradient(180deg, transparent 0, var(--color-bg) var(--space-8));
+  }
+
+  .queueOverlay {
+    inset: 0;
+    width: 100%;
+    padding-top: env(safe-area-inset-top);
+    border-radius: 0;
+    background: var(--color-bg);
+  }
+}

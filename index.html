@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta
+      name="description"
+      content="SONORA: aplikacja muzyczna w przeglądarce z playlistami, ulubionymi, kolejką i odtwarzaczem."
+    />
+    <meta name="theme-color" content="#07060b" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <title>SONORA</title>
+    <script>
+      // Ustawienie motywu przed wczytaniem aplikacji zapobiega mignięciu złych kolorów.
+      (function () {
+        var theme = 'dark';
+        try {
+          var saved = JSON.parse(localStorage.getItem('sonora:v1:settings') || 'null');
+          if (saved && saved.theme === 'light') theme = 'light';
+          if (saved && saved.theme === 'system') {
+            theme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+          }
+          if (saved && saved.motion === 'reduce') document.documentElement.dataset.reduceMotion = 'true';
+        } catch (error) {
+          // Brak dostępu do pamięci: zostaje motyw ciemny.
+        }
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
+  </head>
+  <body>
+    <noscript>SONORA wymaga włączonej obsługi JavaScriptu.</noscript>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

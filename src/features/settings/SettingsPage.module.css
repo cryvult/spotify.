@@ -1,0 +1,131 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  max-width: 52rem;
+  padding: var(--space-6);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+}
+
+.heading {
+  font-size: var(--text-xl);
+  font-weight: var(--weight-bold);
+}
+
+.subheading {
+  margin-top: var(--space-2);
+  color: var(--color-text);
+  font-size: var(--text-md);
+  font-weight: var(--weight-semibold);
+}
+
+.nameRow {
+  max-width: 24rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+}
+
+.label {
+  font-weight: var(--weight-semibold);
+}
+
+.hint {
+  max-width: 65ch;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+.genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.genre {
+  min-height: 2.25rem;
+  padding: 0 var(--space-4);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-pill);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+}
+
+.genre:hover {
+  border-color: var(--color-text-muted);
+}
+
+.genre[aria-pressed='true'] {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+}
+
+.switches > * + * {
+  border-top: 1px solid var(--color-border);
+}
+
+.inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.danger {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-4);
+  border: 1px solid color-mix(in srgb, var(--color-danger) 40%, transparent);
+  border-radius: var(--radius-sm);
+  background: var(--color-danger-soft);
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  max-width: 70ch;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+.about a {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  color: var(--color-text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.credits {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding-left: var(--space-5);
+  list-style: disc;
+}
+
+.sublist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-4);
+  margin-top: var(--space-1);
+  padding-left: var(--space-4);
+  list-style: circle;
+}
+
+@media (max-width: 639px) {
+  .card {
+    padding: var(--space-5) var(--space-4);
+  }
+}

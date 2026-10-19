@@ -1,0 +1,53 @@
+.info {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-width: 0;
+}
+
+.cover {
+  width: 3.5rem;
+  flex-shrink: 0;
+  border-radius: var(--radius-xs);
+}
+
+.placeholder {
+  width: 3.5rem;
+  height: 3.5rem;
+  flex-shrink: 0;
+  border-radius: var(--radius-xs);
+  background: var(--color-surface-hover);
+}
+
+.empty {
+  color: var(--color-text-subtle);
+  font-size: var(--text-sm);
+}
+
+.text {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+}
+
+.title,
+.artist {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.title {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+}
+
+.artist {
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+}
+
+a.title:hover,
+a.artist:hover {
+  text-decoration: underline;
+}

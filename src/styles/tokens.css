@@ -1,0 +1,158 @@
+/*
+ * System stylów SONORA: wszystkie kolory, odstępy, typografia, cienie i zaokrąglenia
+ * są zdefiniowane jako zmienne CSS. Komponenty korzystają wyłącznie z tych zmiennych.
+ *
+ * Zasada zaokrągleń: przyciski i pola wyszukiwania są „pigułkami”, karty i panele mają 12 px,
+ * okładki i małe elementy 8 px, okna dialogowe 16 px.
+ * Zasada kolorów: fiolet to jedyny kolor akcji; turkus oznacza wyłącznie „teraz odtwarzane”
+ * oraz potwierdzenia.
+ */
+
+:root {
+  /* Typografia */
+  --font-sans: 'Inter Variable', 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-features: 'cv11', 'ss01', 'tnum' 0;
+  --text-2xs: 0.6875rem;
+  --text-xs: 0.75rem;
+  --text-sm: 0.8125rem;
+  --text-base: 0.9375rem;
+  --text-md: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: clamp(1.75rem, 3.2vw, 2.5rem);
+  --text-display: clamp(2rem, 5.5vw, 4.5rem);
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-heavy: 800;
+  --tracking-tight: -0.015em;
+  --tracking-display: -0.035em;
+  --leading-tight: 1.15;
+  --leading-snug: 1.3;
+  --leading-normal: 1.55;
+
+  /* Odstępy (skala co 4 px) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --page-gutter: clamp(1rem, 2.5vw, 2rem);
+
+  /* Zaokrąglenia */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+
+  /* Warstwy (z-index) */
+  --z-sticky: 10;
+  --z-sidebar: 20;
+  --z-player: 30;
+  --z-drawer: 40;
+  --z-overlay: 50;
+  --z-menu: 60;
+  --z-toast: 70;
+  --z-tooltip: 80;
+
+  /* Wymiary układu */
+  --sidebar-width: 17rem;
+  --sidebar-collapsed: 4.5rem;
+  --queue-width: 22rem;
+  --player-height: 5.5rem;
+  --topbar-height: 3.75rem;
+  --tabbar-height: 3.75rem;
+  --mini-player-height: 3.75rem;
+  --content-max: 1600px;
+
+  /* Ruch */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --duration-fast: 120ms;
+  --duration: 200ms;
+  --duration-slow: 360ms;
+}
+
+/* Motyw ciemny: domyślny */
+:root,
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --color-shell: #07060b;
+  --color-bg: #0c0b12;
+  --color-bg-elevated: #13121b;
+  --color-surface: #191823;
+  --color-surface-hover: #22212e;
+  --color-surface-active: #2b2a39;
+  --color-surface-overlay: #1c1b27;
+  --color-border: #262534;
+  --color-border-strong: #393848;
+  --color-text: #f3f2f8;
+  --color-text-muted: #aeacbf;
+  --color-text-subtle: #8f8ea2;
+  --color-accent: #8b6cff;
+  --color-accent-hover: #9e85ff;
+  --color-accent-pressed: #7a59f5;
+  --color-accent-text: #a58dff;
+  --color-accent-soft: rgb(139 108 255 / 0.16);
+  --color-on-accent: #0c0b12;
+  --color-teal: #3dd6c6;
+  --color-teal-soft: rgb(61 214 198 / 0.14);
+  --color-danger: #ff6b7f;
+  --color-danger-soft: rgb(255 107 127 / 0.14);
+  --color-focus: #b8a6ff;
+  --color-scrim: rgb(6 5 12 / 0.66);
+  --color-track: #302f3e;
+  --color-track-buffered: #4a4959;
+  --color-skeleton: #1f1e2a;
+  --color-skeleton-shine: #2a2937;
+  --shadow-sm: 0 1px 2px rgb(5 4 12 / 0.5);
+  --shadow-md: 0 10px 28px rgb(5 4 12 / 0.5);
+  --shadow-lg: 0 24px 64px rgb(5 4 12 / 0.65);
+  --shadow-cover: 0 12px 32px rgb(5 4 12 / 0.55);
+  --header-fade: rgb(12 11 18 / 0);
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+  --color-shell: #e4e2ec;
+  --color-bg: #f6f5fa;
+  --color-bg-elevated: #fbfaff;
+  --color-surface: #fbfaff;
+  --color-surface-hover: #eeecf6;
+  --color-surface-active: #e5e2f1;
+  --color-surface-overlay: #fdfcff;
+  --color-border: #e2dfec;
+  --color-border-strong: #ccc8dc;
+  --color-text: #15141d;
+  --color-text-muted: #545266;
+  --color-text-subtle: #646277;
+  --color-accent: #6a4ce8;
+  --color-accent-hover: #5c3fdc;
+  --color-accent-pressed: #5233cc;
+  --color-accent-text: #5b3dd9;
+  --color-accent-soft: rgb(106 76 232 / 0.12);
+  --color-on-accent: #fdfcff;
+  --color-teal: #0b7d72;
+  --color-teal-soft: rgb(11 125 114 / 0.12);
+  --color-danger: #c0304a;
+  --color-danger-soft: rgb(192 48 74 / 0.1);
+  --color-focus: #6a4ce8;
+  --color-scrim: rgb(24 20 44 / 0.42);
+  --color-track: #cdc9dd;
+  --color-track-buffered: #aca7c2;
+  --color-skeleton: #e6e3ef;
+  --color-skeleton-shine: #f3f1f9;
+  --shadow-sm: 0 1px 2px rgb(40 30 90 / 0.08);
+  --shadow-md: 0 10px 28px rgb(40 30 90 / 0.12);
+  --shadow-lg: 0 24px 64px rgb(40 30 90 / 0.18);
+  --shadow-cover: 0 12px 30px rgb(40 30 90 / 0.22);
+  --header-fade: rgb(242 241 247 / 0);
+}

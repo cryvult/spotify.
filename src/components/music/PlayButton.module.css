@@ -1,0 +1,57 @@
+.button {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+  box-shadow: var(--shadow-md);
+  transition:
+    transform var(--duration-fast) ease,
+    background-color var(--duration-fast) ease;
+}
+
+.button:hover:not(:disabled) {
+  background: var(--color-accent-hover);
+  transform: scale(1.05);
+}
+
+.button:active:not(:disabled) {
+  transform: scale(0.96);
+}
+
+.button:disabled {
+  opacity: 0.4;
+  box-shadow: none;
+  transform: none;
+}
+
+.sm {
+  width: 2.25rem;
+  height: 2.25rem;
+}
+
+.md {
+  width: 3rem;
+  height: 3rem;
+}
+
+.lg {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+/* Trójkąt „Play” optycznie przesunięty, aby wyglądał na wyśrodkowany. */
+.playIcon {
+  transform: translateX(1.5px);
+}
+
+.spin {
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

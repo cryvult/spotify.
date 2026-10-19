@@ -1,0 +1,119 @@
+.sheet {
+  width: 100%;
+  max-width: 100%;
+  height: 100dvh;
+  max-height: 100dvh;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--color-accent) 22%, var(--color-bg)) 0%,
+    var(--color-bg) 70%
+  );
+  color: var(--color-text);
+}
+
+.sheet[open] {
+  animation: sheet-up var(--duration-slow) var(--ease-out);
+}
+
+.sheet::backdrop {
+  background: var(--color-bg);
+}
+
+@keyframes sheet-up {
+  from {
+    transform: translateY(24px);
+    opacity: 0;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  min-height: 100%;
+  padding: calc(env(safe-area-inset-top) + var(--space-3)) var(--space-6)
+    calc(env(safe-area-inset-bottom) + var(--space-6));
+  overflow-y: auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-inline: calc(var(--space-3) * -1);
+}
+
+.context {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.contextLabel {
+  color: var(--color-text-muted);
+  font-size: var(--text-2xs);
+  font-weight: var(--weight-semibold);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.contextTitle {
+  max-width: 100%;
+  overflow: hidden;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-bold);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cover {
+  width: min(100%, 26rem);
+  align-self: center;
+  margin-block: var(--space-4);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.titles {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+}
+
+.title {
+  overflow: hidden;
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-bold);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.artist {
+  color: var(--color-text-muted);
+}
+
+.notice:empty {
+  display: none;
+}
+
+.volume {
+  display: flex;
+  justify-content: center;
+}
+
+.volume > div {
+  max-width: 16rem;
+}

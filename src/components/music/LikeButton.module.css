@@ -1,0 +1,20 @@
+.like {
+  transition:
+    color var(--duration-fast) ease,
+    transform var(--duration-fast) ease;
+}
+
+.liked,
+.liked:hover:not(:disabled) {
+  color: var(--color-accent-text);
+}
+
+.liked svg {
+  animation: pop var(--duration-slow) var(--ease-out);
+}
+
+@keyframes pop {
+  40% {
+    transform: scale(1.25);
+  }
+}

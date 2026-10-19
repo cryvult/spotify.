@@ -1,0 +1,82 @@
+.mini {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  height: var(--mini-player-height);
+  margin: 0 var(--space-2);
+  padding: 0 var(--space-2) 0 var(--space-1);
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-active);
+  box-shadow: var(--shadow-md);
+}
+
+.open {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  padding-left: var(--space-1);
+  text-align: left;
+}
+
+.cover {
+  width: 2.75rem;
+  flex-shrink: 0;
+  border-radius: var(--radius-xs);
+}
+
+.text {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+}
+
+.title,
+.artist {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.title {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+}
+
+.artist {
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+}
+
+.error .artist {
+  color: var(--color-danger);
+}
+
+.play {
+  background: var(--color-text);
+  color: var(--color-bg);
+  box-shadow: none;
+}
+
+.progress {
+  position: absolute;
+  right: var(--space-2);
+  bottom: 0;
+  left: var(--space-2);
+  height: 2px;
+  overflow: hidden;
+  border-radius: 1px;
+  background: var(--color-border-strong);
+}
+
+.progressFill {
+  position: absolute;
+  inset: 0;
+  background: var(--color-text);
+  transform-origin: left;
+  transition: transform 250ms linear;
+}

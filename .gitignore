@@ -1,0 +1,29 @@
+# Zależności
+node_modules/
+
+# Wyniki budowania i testów
+dist/
+dist-ssr/
+coverage/
+*.tsbuildinfo
+
+# Logi
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Zmienne środowiskowe (prawdziwe wartości nie trafiają do repozytorium)
+.env
+.env.*
+!.env.example
+
+# Edytory i system
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+*.swp

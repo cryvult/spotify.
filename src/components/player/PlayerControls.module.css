@@ -1,0 +1,28 @@
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+.play {
+  margin-inline: var(--space-2);
+  background: var(--color-text);
+  color: var(--color-bg);
+  box-shadow: none;
+}
+
+.play:hover {
+  background: var(--color-text);
+  transform: scale(1.06);
+}
+
+.play:disabled {
+  opacity: 0.5;
+  transform: none;
+}
+
+.large {
+  justify-content: space-between;
+  width: 100%;
+}

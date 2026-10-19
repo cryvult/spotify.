@@ -1,0 +1,24 @@
+.tabbar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  height: var(--tabbar-height);
+}
+
+.tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  color: var(--color-text-muted);
+  font-size: var(--text-2xs);
+  font-weight: var(--weight-semibold);
+}
+
+.active {
+  color: var(--color-text);
+}
+
+.active svg {
+  color: var(--color-accent-text);
+}

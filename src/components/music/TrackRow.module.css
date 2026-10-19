@@ -1,0 +1,212 @@
+/*
+ * Kolumny wiersza: numer | tytuł | (album) | (data dodania) | serce | czas | menu.
+ * Na węższych ekranach mniej ważne kolumny znikają.
+ */
+.row {
+  --cols: 2.5rem minmax(0, 1fr) 2.5rem 3.25rem 2.5rem;
+  display: grid;
+  grid-template-columns: var(--cols);
+  align-items: center;
+  gap: var(--space-3);
+  min-height: 3.5rem;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  transition: background-color var(--duration-fast) ease;
+}
+
+.withAlbum {
+  --cols: 2.5rem minmax(0, 1.5fr) minmax(0, 1fr) 2.5rem 3.25rem 2.5rem;
+}
+
+.withAdded {
+  --cols: 2.5rem minmax(0, 1.5fr) 7.5rem 2.5rem 3.25rem 2.5rem;
+}
+
+.withAlbum.withAdded {
+  --cols: 2.5rem minmax(0, 1.5fr) minmax(0, 1fr) 7.5rem 2.5rem 3.25rem 2.5rem;
+}
+
+.row:hover,
+.row:focus-within {
+  background: var(--color-surface-hover);
+}
+
+.index {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 2.5rem;
+}
+
+.number {
+  font-variant-numeric: tabular-nums;
+  font-size: var(--text-base);
+}
+
+.rowPlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-pill);
+  color: var(--color-text);
+  opacity: 0;
+}
+
+.rowPlay:focus-visible {
+  opacity: 1;
+}
+
+.row:hover .rowPlay {
+  opacity: 1;
+}
+
+.row:hover .number,
+.row:has(.rowPlay:focus-visible) .number {
+  opacity: 0;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-width: 0;
+}
+
+.thumb {
+  width: 2.75rem;
+  flex-shrink: 0;
+  border-radius: var(--radius-xs);
+}
+
+.text {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+}
+
+.title {
+  overflow: hidden;
+  color: var(--color-text);
+  font-size: var(--text-base);
+  font-weight: var(--weight-medium);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.current .title {
+  color: var(--color-teal);
+}
+
+.artist {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.external {
+  display: inline-flex;
+  color: var(--color-text-subtle);
+}
+
+.link {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.link:hover {
+  color: var(--color-text);
+  text-decoration: underline;
+}
+
+.album {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.added {
+  white-space: nowrap;
+}
+
+.duration {
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.like,
+.more {
+  display: flex;
+  justify-content: center;
+}
+
+/* Serce i menu pojawiają się po najechaniu, chyba że utwór jest już polubiony. */
+@media (hover: hover) {
+  .like :global(button[aria-pressed='false']),
+  .more button {
+    opacity: 0;
+  }
+
+  .row:hover .like button,
+  .row:hover .more button,
+  .row:focus-within .like button,
+  .row:focus-within .more button,
+  .more button[aria-expanded='true'] {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1099px) {
+  .withAdded {
+    --cols: 2.5rem minmax(0, 1fr) 2.5rem 3.25rem 2.5rem;
+  }
+
+  .withAlbum.withAdded {
+    --cols: 2.5rem minmax(0, 1.5fr) minmax(0, 1fr) 2.5rem 3.25rem 2.5rem;
+  }
+
+  .added {
+    display: none;
+  }
+}
+
+@media (max-width: 899px) {
+  .withAlbum,
+  .withAlbum.withAdded {
+    --cols: 2.5rem minmax(0, 1fr) 2.5rem 3.25rem 2.5rem;
+  }
+
+  .album {
+    display: none;
+  }
+}
+
+/* Telefony: okładka, tytuł, serce i menu; dotknięcie wiersza odtwarza utwór. */
+@media (max-width: 767px) {
+  .row,
+  .withAlbum,
+  .withAdded,
+  .withAlbum.withAdded {
+    --cols: minmax(0, 1fr) 2.5rem 2.5rem;
+    gap: var(--space-2);
+    padding-inline: 0;
+  }
+
+  .index,
+  .duration {
+    display: none;
+  }
+
+  .row:hover {
+    background: transparent;
+  }
+
+  .row:active {
+    background: var(--color-surface-hover);
+  }
+}

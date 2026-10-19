@@ -1,0 +1,30 @@
+.artist {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.artistImage {
+  width: 1.5rem;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  max-width: 70ch;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+.license a {
+  color: var(--color-text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.source {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
