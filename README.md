@@ -92,7 +92,7 @@ Wymagany jest **Node.js 22.13 lub nowszy** (najlepiej aktualna wersja LTS). Plik
 ## Instalacja i uruchomienie
 
 ```bash
-git clone https://github.com/cryvult/spotify.git sonora
+git clone https://github.com/cryvult/spotify..git sonora
 cd sonora
 npm install
 npm run dev
@@ -267,7 +267,7 @@ cd sonora
 git init -b main
 git add .
 git commit -m "SONORA: aplikacja muzyczna w React i TypeScript"
-git remote add origin https://github.com/cryvult/spotify.git
+git remote add origin https://github.com/cryvult/spotify..git
 git push -u origin main
 ```
 
